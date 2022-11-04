@@ -72,7 +72,7 @@ while True:
             elif data and data['created'] == 'None':
                 FILE_DATA['Program'][ST_PROGRAM_DATE_NAME][app].update({'created': ST_TIME, 'updated': ST_TIME})
         else:
-            data = FILE_DATA['Program'].get(ST_PROGRAM_DATE_NAME, app)
+            data = FILE_DATA['Program'][ST_PROGRAM_DATE_NAME].get(app)
             if data:
                 FILE_DATA['Program'][ST_PROGRAM_DATE_NAME][app].update({'created': 'None', 'updated': 'None'})
     with open(ST_FIlE_NAME, 'w') as file:
