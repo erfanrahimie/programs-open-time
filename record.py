@@ -48,7 +48,7 @@ while True:
         FILE_DATA = json.load(data)
 
     app_name = FILE_DATA['Appname']
-    list_programs = subprocess.run('tasklist /fi "USERNAME ne NT AUTHORITY\SYSTEM" /fi "STATUS eq running"', text=True, capture_output=True)
+    list_programs = subprocess.run('tasklist /fi "USERNAME ne NT AUTHORITY\SYSTEM" /fi "STATUS eq running"', shell=True, text=True, capture_output=True)
     for app in app_name:
         if app.lower() in list_programs.stdout.lower():
             ST_TIME = datetime.now().strftime('%H:%M:%S')
