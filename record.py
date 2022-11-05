@@ -20,16 +20,14 @@ with open('data.json', 'r') as value:
 with open('data.json', 'r') as file:
     data = json.load(file)
 
-if data.get('Program', ST_PROGRAM_DATE):
+if data['Program'].get(ST_PROGRAM_DATE_NAME):
     pass
 else:
     data['Program'] = ST_PROGRAM_DATE
-    data['UseTime'] = ST_PROGRAM_DATE
+    data['UseTime'].update(ST_PROGRAM_DATE)
+
     with open(ST_FIlE_NAME, 'w') as file:
         file.write(json.dumps(data))
-
-with open('data.json', 'r') as file:
-    data = json.load(file)
 
 app_name = data['Appname']
 

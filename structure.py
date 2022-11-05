@@ -9,9 +9,9 @@ ST_DATE = datetime.now().strftime('%Y/%m/%d')
 
 ST_TIME = datetime.now().strftime('%H:%M:%S')
 
-ST_PROGRAM_DATE = {f'Runtime_{ST_DATE}': {}}
+ST_PROGRAM_DATE = {f'{ST_DATE}': {}}
 
-ST_PROGRAM_DATE_NAME = f'Runtime_{ST_DATE}'
+ST_PROGRAM_DATE_NAME = f'{ST_DATE}'
 
 
 def time_sum(time) -> timedelta:
